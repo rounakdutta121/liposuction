@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en" style="margin:0; padding:0;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Green Consulting</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #0a1e2a;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: #f5f5f5;
+    }
+    table {
+      border-spacing: 0;
+      width: 100%;
+    }
+    img {
+      border: 0;
+      display: block;
+      height: auto;
+      width: 100% !important; /* FIX FOR GMAIL */
+      max-width: 100% !important;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: linear-gradient(180deg, #112d40 0%, #081b25 100%);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    }
+    .header img {
+      width: 80px !important; /* KEEP LOGO SIZE */
+      max-width: 80px !important;
+    }
+    .header {
+      background-color: #0f2b3e;
+      text-align: center;
+      padding: 25px 15px;
+    }
+    .header h1 {
+      margin: 12px 0 0 0;
+      color: #00e6b8;
+      font-size: 28px;
+      letter-spacing: 1px;
+    }
+    .header p {
+      color: #a8d4c9;
+      margin: 5px 0 0 0;
+      font-size: 14px;
+      font-style: italic;
+    }
+    .news-section {
+      padding: 25px 20px;
+      border-bottom: 1px solid #0d364a;
+    }
+    .dialogue {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .dialogue img {
+      width: 70px !important;
+      max-width: 70px !important;
+      height: auto;
+      margin-right: 10px;
+    }
+    .dialogue p {
+      font-size: 14px;
+      color: #7fd5c2;
+      margin: 0;
+    }
+    .headline {
+      color: #fff;
+      font-size: 20px;
+      margin: 10px 0;
+      font-weight: bold;
+    }
+    .content {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #e4f0ec;
+      margin-bottom: 15px;
+    }
+    .cta-button {
+      background-color: #00e6b8;
+      color: #082229;
+      padding: 10px 18px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+    }
+    .footer {
+      background-color: #06161e;
+      color: #9fc3bb;
+      font-size: 12px;
+      padding: 25px 20px;
+      text-align: center;
+      line-height: 1.6;
+    }
+    .a{
+        width: 1px;
+        height: 1px;
+    }
+    @media screen and (max-width:600px){
+      .dialogue {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .dialogue img {
+        margin: 0 0 8px 0;
+      }
+      .abc{
+          width:120px;
+          height: 100px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <table role="presentation" class="container">
+
+    <tr>
+      <td class="header">
+        <table role="presentation" width="100%">
+          <tr>
+            <td align="center">
+              <img src="https://res.cloudinary.com/dadofd9d2/image/upload/v1777963766/sft_logo_white_s9oely.png" alt="DamnArt Logo">
+            </td>
+          </tr>
+        </table>
+        <h1>Green Consulting</h1>
+        <p>(Newsletter On Exploring the Harmony between Technology and Nature)</p>
+
+        <p style="font-size:11px; margin-top:8px; color:#7fd5c2;">
+          | +91 90567-42783 | bdm@sftrainings.org | Plot 146, JLPL Industrial Area | Sector 82, Mohali (PB) | India 140306 |
+        </p>
+
+      </td>
+    </tr>
+
+    <tr>
+      <td class="news-section">
+        <div class="dialogue">
+          <img src="https://www.damnart.com/wp-content/uploads/2025/11/unnamed-removebg-preview.png" style="border-radius:50px; border:2px solid green; background:white;">
+          <p>“{{ $('Aggregate').item.json.data[0].dialogue }}”<strong>~ Dr Akshay Puri, Sustainable Futures</strong></p>
+        </div>
+        <div class="headline">{{ $('Aggregate').item.json.data[0].title }}</div>
+        <img src="{{ $('Aggregate').item.json.data[0].img_link }}" alt="News Image 1">
+        <div class="content">
+          {{ $('Aggregate').item.json.data[0].content }}
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="news-section">
+        <div class="dialogue">
+          <p>“{{ $('Aggregate').item.json.data[1].dialogue }}” <strong>~ Dr Akshay Puri, Sustainable Futures</strong></p>
+          <img src="https://www.damnart.com/wp-content/uploads/2025/11/unnamed-removebg-preview-1.png" style="border-radius:50px; border:2px solid green; background:white; margin-left: 85px;">
+        </div>
+        <div class="headline">{{ $('Aggregate').item.json.data[1].title }}</div>
+        <img src="{{ $('Aggregate').item.json.data[1].img_link }}" alt="News Image 2">
+        <div class="content">{{ $('Aggregate').item.json.data[1].content }}</div>
+      </td>
+    </tr>
+
+     <tr>
+      <td class="news-section" style="text-align:center;">
+        
+        <div><a href="https://www.sftrainings.org/courses/?utm_source=newsletter&utm_medium=email&utm_campaign=carbon&utm_content=call-now&utm_term=newsletter"><button style="height:6vh;width:15vw;border-radius:24px;border:1px solid rgb(0, 230, 184); background-color:rgb(0, 230, 184);color:white;font-weight:bolder;cursor:pointer;" class="abc">Call Now</button></a></div>
+        <h2 style="color:#00e6b8; margin-bottom:15px;">Unlock Tailored Strategies for Climate Resilience</h2>
+        <a href="https://www.sftrainings.org/courses/?utm_source=newsletter&utm_medium=email&utm_campaign=carbon&utm_content=call-now&utm_term=newsletter" target="_blank">
+          <img src="{{ $json.image }}"  style="border-radius:10px;">
+        </a>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="news-section">
+        <div class="dialogue">
+          <img src="https://www.damnart.com/wp-content/uploads/2025/11/unnamed-removebg-preview-2.png" style="border-radius:50px; border:2px solid green; background:white;">
+          <p>“{{ $('Aggregate').item.json.data[2].dialogue }}”<strong>~ Dr Akshay Puri, Sustainable Futures</strong></p>
+        </div>
+        <div class="headline">{{ $('Aggregate').item.json.data[2].title }}</div>
+        <img src="{{ $('Aggregate').item.json.data[2].img_link }}" alt="News Image 3">
+        <div class="content">{{ $('Aggregate').item.json.data[2].content }}</div>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="news-section" style="text-align:center;">
+        
+        
+        
+        <a href="https://www.sftrainings.org/courses/?utm_source=newsletter&utm_medium=email&utm_campaign=carbon&utm_content=call-now&utm_term=newsletter" target="_blank">
+          <img src="https://res.cloudinary.com/dadofd9d2/image/upload/v1777971832/SFT_NEWSLETTER_POST_tdfzh5.jpg"  style="border-radius:10px;">
+        </a>
+      </td>
+    </tr>
+
+    <tr>
+      <td style="padding: 25px 30px; background-color: #06161e; text-align: center; font-family: Arial, sans-serif;">
+        <table width="100%" role="presentation" style="max-width: 600px; margin: 0 auto;">
+          <tr>
+            <td align="center" style="font-size: 12px; line-height: 1.7; color: #aaaaaa;">
+
+              <p style="margin: 0 0 10px 0; color: white; font-size: 11px;">
+                Thanks for reading. We'll be back with our next issue with more interesting updates.
+              </p>
+
+              <p style="margin: 0 0 15px 0; color: white;font-size: 11px;">
+                Crafted by an AI agent and shaped by 
+                <strong><a href="https://damnart.com" style="color:white;">DamnArt</a></strong>
+              </p>
+
+              <hr style="border: 0; border-top: 1px solid #06161e; margin: 15px auto; width: 80%;">
+
+              <p style="margin: 0 0 12px 0; font-size: 11px; line-height: 1.6; color: white; text-align: justify;">
+                <strong>Disclaimer</strong>: This newsletter is independently created and administered by
+                <strong><a href="https://damnart.com" style="color:white;">DamnArt</a></strong> which is solely responsible for its content, management, and compliance. <a href="https://sustainablefuturespcs.org/" style="color:white;"><strong>Sustainable Futures</strong></a> is solely a sponsor of this newsletter and does not own, control, or manage its content, operations, or distribution. <a href="https://sustainablefuturespcs.org" style="color:white;"><strong>Sustainable Futures</strong></a> assumes no responsibility or liability of any kind, whether direct or indirect, arising from or in connection with the content, management, or use of this newsletter. Recipients may unsubscribe at any time.
+              </p>
+              
+
+              <hr style="border: 0; border-top: 1px solid #06161e; margin: 15px auto; width: 80%;">
+
+              <p style="margin: 15px 0 6px 0; color:white;">
+                &copy; 2025 <strong><a href="https://damnart.com" style="color:white;">DamnArt</a></strong>. All Rights Reserved.
+              </p>
+
+              
+
+              <p style="margin: 0 0 12px 0; font-size: 11px; color: white;">
+                | +91 90567-42783 | bdm@sftrainings.org | Plot 146, JLPL Industrial Area |Sector 82, Mohali (PB) | India 140306 |
+              </p>
+
+              <p style="margin: 0; color:white;">
+                <a href="https://damnart-ai-guladab.n8n-wsk.com/webhook/unsubscribe-newsletter(green)" style="color: white; text-decoration: underline;">Unsubscribe</a>
+                &nbsp;|&nbsp;
+                <a href="https://www.damnart.com/privacy-policy/" style="color: white; text-decoration: underline;">Privacy Policy</a>
+              </p>
+
+              <img src="https://email-tracker-e46m.onrender.com/track/newsletter/Dr-Aeron-Vale/{{ $json.email }}" width="1" height="1" class="a">
+
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+  </table>
+</body>
+</html>

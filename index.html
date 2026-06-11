@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="https://res.cloudinary.com/dadofd9d2/image/upload/v1781082613/Dr.-Akhil-Garg-_ngltq2.png">
+    <title>Liposuction Consultation in Chandigarh & Mohali | Dr. Akhil Garg</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#0d1116',
+                        cardBg: '#151b23',
+                        gold: '#d4af37',
+                        goldHover: '#f0c851',
+                        goldLight: '#e5c158',
+                        textGray: '#a3a3a3'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "linear-gradient(to right, rgba(13, 17, 22, 1) 40%, rgba(13, 17, 22, 0.6)), url('https://images.unsplash.com/photo-1542840410-3092f99611a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')",
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0d1116; }
+        ::-webkit-scrollbar-thumb { background: #d4af37; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #f0c851; }
+        
+        /* Utility for text balance */
+        .text-balance { text-wrap: balance; }
+        
+        /* Accordion transition */
+        .accordion-content {
+            transition: max-height 0.3s ease-out, opacity 0.3s ease-out, padding 0.3s ease;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+        .accordion-content.active {
+            max-height: 500px; /* Arbitrary large number */
+            opacity: 1;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-dark text-gray-300 font-sans antialiased overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 backdrop-blur-sm border-b border-gray-800 bg-dark/95 bg-cover bg-center bg-no-repeat" style="background-image: linear-gradient(to right, rgba(13, 17, 22, 0.7) 30%, rgba(13, 17, 22, 0.6)), url('https://res.cloudinary.com/dadofd9d2/image/upload/v1781150760/ChatGPT_Image_Jun_11_2026_09_35_15_AM_ilsrtz.png');">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 md:h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <img src="https://res.cloudinary.com/dadofd9d2/image/upload/v1781082613/Dr.-Akhil-Garg-_ngltq2.png" alt="Dr. Akhil Garg" class="w-28 sm:w-36 lg:w-auto" style="height:5rem;">
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gold border-b border-gold pb-1 text-sm font-medium">Home</a>
+                    <a href="#about" class="text-gray-300 hover:text-gold transition text-sm font-medium">About Dr. Akhil Garg</a>
+                    <a href="#liposuction" class="text-gray-300 hover:text-gold transition text-sm font-medium flex items-center">Liposuction <i class="fas fa-chevron-down ml-1 text-xs"></i></a>
+                    <a href="#process" class="text-gray-300 hover:text-gold transition text-sm font-medium">Process</a>
+                    <a href="#cost" class="text-gray-300 hover:text-gold transition text-sm font-medium">Cost</a>
+                    <a href="#consultation" class="text-gray-300 hover:text-gold transition text-sm font-medium">Contact</a>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="hidden md:block">
+                    <a href="#consultation" class="bg-gold hover:bg-goldHover text-dark font-semibold py-2 px-4 rounded text-sm transition flex items-center shadow-lg shadow-gold/20">
+                        <i class="far fa-calendar-alt mr-2"></i> BOOK CONSULTATION
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobileMenuBtn" class="text-gold hover:text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobileMenu" class="fixed inset-0 z-40 hidden">
+        <div class="absolute inset-0 bg-dark/80 backdrop-blur-sm" id="mobileMenuOverlay"></div>
+        <div class="absolute top-0 right-0 w-64 sm:w-72 h-full bg-cardBg border-l border-gray-800 p-6 sm:p-8 transform transition-transform duration-300">
+            <div class="flex justify-end mb-6 sm:mb-8">
+                <button id="mobileMenuClose" class="text-gold hover:text-white focus:outline-none">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            <div class="flex flex-col space-y-6">
+                <a href="#home" class="text-gold font-medium text-lg">Home</a>
+                <a href="#about" class="text-gray-300 hover:text-gold transition font-medium text-lg">About</a>
+                <a href="#liposuction" class="text-gray-300 hover:text-gold transition font-medium text-lg">Liposuction</a>
+                <a href="#process" class="text-gray-300 hover:text-gold transition font-medium text-lg">Process</a>
+                <a href="#cost" class="text-gray-300 hover:text-gold transition font-medium text-lg">Cost</a>
+                <a href="#consultation" class="text-gray-300 hover:text-gold transition font-medium text-lg">Contact</a>
+                <div class="pt-4 border-t border-gray-800">
+                    <a href="#consultation" class="bg-gold hover:bg-goldHover text-dark font-semibold py-3 px-6 rounded transition flex items-center justify-center">
+                        <i class="far fa-calendar-alt mr-2"></i> BOOK CONSULTATION
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-24 pb-12 md:pt-32 md:pb-24 lg:min-h-screen flex items-center overflow-hidden">
+        <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover hidden md:block">
+            <source src="https://res.cloudinary.com/dadofd9d2/video/upload/v1781089390/AQN4GmSn86aIA94rfU7rlQRuf55hy3ZBrFlOqupK4dNh5kYCrZFhK9kwYXN-GNAt9leffe3DYq1TxxIDfp0SlK690wxlUU2BkX-aulQ.mp4_oxemrd.mp4" type="video/mp4">
+        </video>
+        <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover md:hidden">
+            <source src="https://res.cloudinary.com/dadofd9d2/video/upload/v1781151806/AQOx8Ybes9QCFA2ViWQQZlz4Kl5v2I6-AKeUrmig6zNBoWENK6b1NpnA-zGDQpThgNxDLnyUFrMqqUO7yMaloZ2qLLYP4hH9XuG5b70.mp4_lsr0vw.mp4" type="video/mp4">
+        </video>
+        <div class="absolute inset-0 bg-dark/70"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="flex flex-col lg:flex-row gap-8 md:gap-12 items-center">
+                
+                <!-- Left Content -->
+                <div class="w-full lg:w-3/5 space-y-6">
+                    <p class="text-gold font-medium tracking-widest text-sm uppercase">Reshape. Refine. Reclaim Confidence.</p>
+                    <h1 class="font-serif text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-tight">
+                        LIPOSUCTION<br>
+                        <span class="text-gold">CONSULTATION</span><br>
+                        <span class="text-xl sm:text-3xl md:text-4xl text-gray-200">in Chandigarh & Mohali</span>
+                    </h1>
+                    
+                    <p class="text-gray-300 text-sm sm:text-lg md:text-xl max-w-2xl leading-relaxed text-balance">
+                        Stubborn fat in areas like the tummy, thighs, arms, waist, back, hips, or under the chin may not always reduce with diet and exercise alone. Liposuction is a body-contouring procedure that may help suitable candidates improve body shape by removing localized fat deposits.
+                    </p>
+                    
+                    <div class="border-l-2 border-gold pl-4 py-1">
+                        <p class="text-gray-200 italic font-medium text-sm sm:text-base">Consult Dr. Akhil Garg for a confidential, doctor-led liposuction and body-contouring evaluation.</p>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-2 sm:gap-3 pt-3 sm:pt-4">
+                        <a href="#consultation" class="sm:flex-1 bg-gold hover:bg-goldHover text-dark font-semibold py-2.5 sm:py-3 px-4 sm:px-6 rounded text-xs sm:text-sm transition flex items-center justify-center shadow-lg shadow-gold/20">
+                            <i class="far fa-calendar-alt mr-2"></i> BOOK CONSULTATION
+                        </a>
+                        <a href="tel:+" class="sm:flex-1 border border-gold hover:bg-gold/10 text-white font-medium py-2.5 sm:py-3 px-4 sm:px-6 rounded text-xs sm:text-sm transition flex items-center justify-center">
+                            <i class="fas fa-phone-alt text-gold mr-2"></i> CALL NOW
+                        </a>
+                        <a href="#" class="sm:flex-1 border border-gold hover:bg-gold/10 text-white font-medium py-2.5 sm:py-3 px-4 sm:px-6 rounded text-xs sm:text-sm transition flex items-center justify-center">
+                            <i class="fab fa-whatsapp text-gold mr-2 text-lg"></i> WHATSAPP US
+                        </a>
+                    </div>
+
+                    <div class="pt-6 space-y-3">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-gold mt-1 mr-3"></i>
+                            <p class="text-sm text-gray-400">Morphe Aesthetics, Chandigarh <span class="mx-2 text-gold">|</span> Fortis Hospital, Mohali</p>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-globe text-gold mt-1 mr-3"></i>
+                            <p class="text-sm text-gray-400">Serving Chandigarh, Mohali, Panchkula, Punjab, Haryana,<br> Himachal Pradesh and North India</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Doctor Card -->
+                <div class="w-full md:w-2/3 lg:w-2/5 xl:w-1/3">
+                    <div class="bg-dark/40 backdrop-blur-sm border border-gold rounded-lg overflow-hidden shadow-2xl">
+                        <!-- Placeholder for Doctor Image -->
+                        <div class="h-48 sm:h-64 bg-dark/30 relative">
+                            <img src="https://drakhilplasticsurgery.com/wp-content/uploads/2025/05/Dr-akhil-Jaggi-Sir.jpg" alt="Dr. Akhil Garg" class="w-full h-full object-cover opacity-60 mix-blend-luminosity" style="object-position: 50% 25%;">
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark/40 to-transparent"></div>
+                        </div>
+                        <div class="flex flex-wrap gap-2 px-6 pt-4 sm:hidden">
+                            <a href="#consultation" class="flex-1 bg-gold hover:bg-goldHover text-dark font-semibold py-2 px-3 rounded text-xs text-center transition">BOOK CONSULTATION</a>
+                            <a href="tel:+" class="flex-1 border border-gold hover:bg-gold/10 text-white font-medium py-2 px-3 rounded text-xs text-center transition">CALL NOW</a>
+                        </div>
+                        <div class="p-5 md:p-6 relative z-10 text-center">
+                            <h3 class="font-serif text-xl md:text-2xl text-gold mb-1">DR. AKHIL GARG</h3>
+                            <p class="text-sm text-gray-300 mb-6">PGIMER-Trained Plastic Surgeon<br>Advanced Aesthetic Surgery Exposure in the UK & Japan</p>
+                            
+                            <div class="space-y-4 text-left border-t border-gray-800 pt-6">
+                                <div class="flex items-center">
+                                    <div class="w-10 flex justify-center text-gold"><i class="fas fa-graduation-cap text-xl"></i></div>
+                                    <p class="text-sm font-medium text-gray-200">PGIMER TRAINED</p>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-10 flex justify-center text-gold"><i class="fas fa-globe-americas text-xl"></i></div>
+                                    <p class="text-sm font-medium text-gray-200">UK & JAPAN EXPOSURE</p>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-10 flex justify-center text-gold"><i class="fas fa-award text-xl"></i></div>
+                                    <p class="text-sm font-medium text-gray-200">INTERNATIONAL FELLOWSHIP IN AESTHETIC SURGERY</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 md:py-20 border-t border-gray-800 relative bg-fixed bg-cover bg-center bg-no-repeat" style="background-image: linear-gradient(to right, rgba(13, 17, 22, 0.6) 30%, rgba(13, 17, 22, 0.25)), url('https://res.cloudinary.com/dadofd9d2/image/upload/v1781150760/ChatGPT_Image_Jun_11_2026_09_35_15_AM_ilsrtz.png');">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center">
+                
+                <!-- Image -->
+                <div class="lg:col-span-4 relative group">
+                    <div class="absolute inset-0 bg-gold/10 rounded-lg transform translate-x-3 translate-y-3 transition group-hover:translate-x-4 group-hover:translate-y-4"></div>
+                    <img src="https://res.cloudinary.com/dadofd9d2/image/upload/v1781089873/ChatGPT_Image_Jun_10_2026_04_41_01_PM_ikdtg3.png" alt="Dr. Akhil Garg" class="rounded-lg relative z-10 w-full object-cover h-64 md:h-96 opacity-80 md:grayscale hover:grayscale-0 transition duration-500" style="object-position: 50% 20%;">
+
+                </div>
+
+                <!-- Text Content -->
+                <div class="lg:col-span-4 space-y-6">
+                    <p class="text-gold tracking-wider text-sm font-medium">MEET DR. AKHIL GARG</p>
+                    <h2 class="font-serif text-3xl text-white leading-snug">PGIMER-Trained Plastic Surgeon with International Aesthetic Surgery Exposure</h2>
+                    
+                    <div class="space-y-4 text-sm text-gray-400 leading-relaxed">
+                        <p>Dr. Akhil Garg completed his MBBS and MS General Surgery from Delhi University, followed by M.Ch Plastic Surgery from the prestigious PGIMER, Chandigarh.</p>
+                        <p>He was selected for the ISAPS International Aesthetic Plastic Surgery Fellowship and gained advanced aesthetic and reconstructive surgery exposure in the UK and Japan.</p>
+                        <p>After training across Delhi, Chandigarh, London, Chelmsford, Birmingham, and Tokyo, Dr. Akhil Garg returned to India to bring advanced plastic surgery consultation and global aesthetic surgery exposure to patients in Chandigarh, Mohali, Panchkula, and the wider North India region.</p>
+                    </div>
+                </div>
+
+                <!-- Trust List -->
+                <div class="lg:col-span-4 bg-cardBg p-6 md:p-8 rounded-lg border border-gray-800 h-full">
+                    <h3 class="font-serif text-xl text-gold mb-6">WHY PATIENTS TRUST<br>DR. AKHIL GARG</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="far fa-check-circle text-gold mt-1 mr-3"></i>
+                            <span class="text-sm text-gray-300">MBBS and MS General Surgery from Delhi University</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="far fa-check-circle text-gold mt-1 mr-3"></i>
+                            <span class="text-sm text-gray-300">M.Ch Plastic Surgery from PGIMER Chandigarh</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="far fa-check-circle text-gold mt-1 mr-3"></i>
+                            <span class="text-sm text-gray-300">Advanced aesthetic surgery exposure in the UK and Japan</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="far fa-check-circle text-gold mt-1 mr-3"></i>
+                            <span class="text-sm text-gray-300">International fellowship exposure in aesthetic plastic surgery</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="far fa-check-circle text-gold mt-1 mr-3"></i>
+                            <span class="text-sm text-gray-300">Consultation available in Chandigarh and Mohali</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="far fa-check-circle text-gold mt-1 mr-3"></i>
+                            <span class="text-sm text-gray-300">Doctor-led treatment planning</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="far fa-check-circle text-gold mt-1 mr-3"></i>
+                            <span class="text-sm text-gray-300">Clear discussion of suitability, recovery, cost, and expectations</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="far fa-check-circle text-gold mt-1 mr-3"></i>
+                            <span class="text-sm text-gray-300">Focus on safe, natural-looking, and proportionate body contouring</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Consultation & Areas Section -->
+    <section id="liposuction" class="py-16 md:py-20 border-t border-gray-800 relative bg-fixed bg-cover bg-center bg-no-repeat" style="background-image: linear-gradient(to right, rgba(13, 17, 22, 0.75) 30%, rgba(13, 17, 22, 0.4)), url('https://res.cloudinary.com/dadofd9d2/image/upload/v1781090180/ChatGPT_Image_Jun_10_2026_04_46_09_PM_yb7p43.png');">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16">
+                
+                <!-- Left: Consultation text -->
+                <div class="space-y-6">
+                    <p class="text-gold tracking-wider text-sm font-medium">DOCTOR-LED LIPOSUCTION CONSULTATION</p>
+                    <h2 class="font-serif text-3xl md:text-4xl text-white leading-tight">Every Body is Different.<br>Every Plan is Personal.</h2>
+                    
+                    <div class="space-y-4 text-gray-400 text-sm leading-relaxed pt-2">
+                        <p>Liposuction is not a weight-loss treatment. It is a surgical body-contouring procedure used for localized fat pockets that do not respond well to regular diet and exercise.</p>
+                        <p>During your consultation, Dr. Akhil Garg will evaluate your body type, fat distribution, skin quality, health condition, and aesthetic goals before advising whether liposuction is suitable for you.</p>
+                    </div>
+
+                    <div class="pt-6">
+                        <a href="#consultation" class="inline-flex items-center border border-gold hover:bg-gold/10 text-gold font-medium py-3 px-6 rounded transition">
+                            <i class="far fa-calendar-alt mr-2"></i> BOOK A CONSULTATION
+                        </a>
+                        <p class="text-xs text-white mt-3">to understand if liposuction is right for you.</p>
+                    </div>
+                </div>
+
+                <!-- Right: Areas Grid -->
+                <div>
+                    <p class="text-gold tracking-wider text-sm font-medium mb-8 text-center lg:text-left">AREAS LIPOSUCTION MAY HELP TREAT</p>
+                    
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-6">
+                        <!-- Area Item -->
+                        <div class="flex flex-col items-center text-center group">
+                            <div class="w-20 h-20 rounded-full border border-gold/50 flex items-center justify-center mb-3 group-hover:border-gold transition group-hover:bg-gold/10">
+                                <span class="font-serif text-2xl text-gold font-semibold">01</span>
+                            </div>
+                            <span class="text-xs text-gray-300">Abdomen /<br>tummy</span>
+                        </div>
+                        <div class="flex flex-col items-center text-center group">
+                            <div class="w-20 h-20 rounded-full border border-gold/50 flex items-center justify-center mb-3 group-hover:border-gold transition group-hover:bg-gold/10">
+                                <span class="font-serif text-2xl text-gold font-semibold">02</span>
+                            </div>
+                            <span class="text-xs text-gray-300">Waist and<br>love handles</span>
+                        </div>
+                        <div class="flex flex-col items-center text-center group">
+                            <div class="w-20 h-20 rounded-full border border-gold/50 flex items-center justify-center mb-3 group-hover:border-gold transition group-hover:bg-gold/10">
+                                <span class="font-serif text-2xl text-gold font-semibold">03</span>
+                            </div>
+                            <span class="text-xs text-gray-300">Thighs</span>
+                        </div>
+                        <div class="flex flex-col items-center text-center group">
+                            <div class="w-20 h-20 rounded-full border border-gold/50 flex items-center justify-center mb-3 group-hover:border-gold transition group-hover:bg-gold/10">
+                                <span class="font-serif text-2xl text-gold font-semibold">04</span>
+                            </div>
+                            <span class="text-xs text-gray-300">Arms</span>
+                        </div>
+                        <div class="flex flex-col items-center text-center group">
+                            <div class="w-20 h-20 rounded-full border border-gold/50 flex items-center justify-center mb-3 group-hover:border-gold transition group-hover:bg-gold/10">
+                                <span class="font-serif text-2xl text-gold font-semibold">05</span>
+                            </div>
+                            <span class="text-xs text-gray-300">Back</span>
+                        </div>
+                        <div class="flex flex-col items-center text-center group">
+                            <div class="w-20 h-20 rounded-full border border-gold/50 flex items-center justify-center mb-3 group-hover:border-gold transition group-hover:bg-gold/10">
+                                <span class="font-serif text-2xl text-gold font-semibold">06</span>
+                            </div>
+                            <span class="text-xs text-gray-300">Hips</span>
+                        </div>
+                        <div class="flex flex-col items-center text-center group">
+                            <div class="w-20 h-20 rounded-full border border-gold/50 flex items-center justify-center mb-3 group-hover:border-gold transition group-hover:bg-gold/10">
+                                <span class="font-serif text-2xl text-gold font-semibold">07</span>
+                            </div>
+                            <span class="text-xs text-gray-300">Chin and<br>neck area</span>
+                        </div>
+                        <div class="flex flex-col items-center text-center group">
+                            <div class="w-20 h-20 rounded-full border border-gold/50 flex items-center justify-center mb-3 group-hover:border-gold transition group-hover:bg-gold/10">
+                                <span class="font-serif text-2xl text-gold font-semibold">08</span>
+                            </div>
+                            <span class="text-xs text-gray-300">Buttock<br>contour area</span>
+                        </div>
+                    </div>
+                    
+                    <p class="text-xs text-white mt-8 text-center lg:text-left">The right treatment area and approach will be discussed after consultation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who May Be A Good Candidate Section - Text Left, Image Right -->
+    <section class="py-16 md:py-20 border-y border-gray-800 relative bg-fixed bg-cover bg-center bg-no-repeat" style="background-image: linear-gradient(to right, rgba(13, 17, 22, 0.6) 30%, rgba(13, 17, 22, 0.25)), url('https://res.cloudinary.com/dadofd9d2/image/upload/v1781150760/ChatGPT_Image_Jun_11_2026_09_35_15_AM_ilsrtz.png');">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
+                <div class="flex flex-col items-start text-left">
+                    <h2 class="font-serif text-3xl md:text-4xl text-gold mb-6">Who May Be A Good Candidate?</h2>
+                    <p class="text-gray-400 leading-relaxed mb-8">You may be a suitable candidate for liposuction if you have stubborn fat in specific areas, stable weight, good health, realistic expectations, and are ready to follow recovery instructions.</p>
+                    <div class="space-y-4 w-full">
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-gold mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="text-white font-medium mb-1">Stable Weight</h4>
+                                <p class="text-sm text-gray-400">Your weight should be relatively stable for at least 6 months before considering liposuction.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-gold mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="text-white font-medium mb-1">Localized Fat Deposits</h4>
+                                <p class="text-sm text-gray-400">Fat in specific areas like the abdomen, thighs, arms, or chin that does not respond to diet and exercise.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-gold mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="text-white font-medium mb-1">Good Overall Health</h4>
+                                <p class="text-sm text-gray-400">No major medical conditions that could impair healing or increase surgical risk.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-gold mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="text-white font-medium mb-1">Realistic Expectations</h4>
+                                <p class="text-sm text-gray-400">Understanding that liposuction is a body-contouring procedure, not a weight-loss solution.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-gold mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="text-white font-medium mb-1">Commitment to Recovery</h4>
+                                <p class="text-sm text-gray-400">Willingness to follow post-operative instructions, wear compression garments, and attend follow-up visits.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-gold/10 rounded-lg transform translate-x-3 translate-y-3 transition group-hover:translate-x-4 group-hover:translate-y-4"></div>
+                    <img src="https://res.cloudinary.com/dadofd9d2/image/upload/v1781090372/ChatGPT_Image_Jun_10_2026_04_49_25_PM_misfdu.png" alt="Good candidate" class="rounded-lg relative z-10 w-full h-64 md:h-96 object-cover opacity-80">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What Happens During Liposuction Section - Image Left, Text Right -->
+    <section id="process" class="py-16 md:py-20 border-b border-gray-800 relative bg-fixed bg-cover bg-center bg-no-repeat" style="background-image: linear-gradient(to right, rgba(13, 17, 22, 0.85) 30%, rgba(13, 17, 22, 0.5)), url('https://res.cloudinary.com/dadofd9d2/image/upload/v1781090663/ChatGPT_Image_Jun_10_2026_04_54_17_PM_nxnhlo.png');">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-gold/10 rounded-lg transform translate-x-3 translate-y-3 transition group-hover:translate-x-4 group-hover:translate-y-4"></div>
+                    <img src="https://res.cloudinary.com/dadofd9d2/image/upload/v1781090536/ChatGPT_Image_Jun_10_2026_04_52_10_PM_hffhk1.png" alt="Surgical procedure" class="rounded-lg relative z-10 w-full h-64 md:h-96 object-cover opacity-80">
+                </div>
+                <div class="flex flex-col items-start text-left">
+                    <h2 class="font-serif text-3xl md:text-4xl text-gold mb-4">What Happens During Liposuction?</h2>
+                    <p class="text-white mb-8">Liposuction is a surgical body-contouring procedure performed using a thin tube called a cannula to remove localized fat deposits.</p>
+                    <div class="space-y-6 w-full">
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center flex-shrink-0 mr-4">
+                                <span class="font-serif text-lg text-gold">1</span>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-medium mb-1">Consultation & Planning</h4>
+                                <p class="text-sm text-white">Dr. Akhil Garg evaluates your body type, fat distribution, skin quality, and health condition. A personalized surgical plan is created based on your aesthetic goals.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center flex-shrink-0 mr-4">
+                                <span class="font-serif text-lg text-gold">2</span>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-medium mb-1">Anesthesia & Incision</h4>
+                                <p class="text-sm text-white">The procedure is performed under local or general anesthesia. Small incisions are made in inconspicuous areas to access the targeted fat deposits.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center flex-shrink-0 mr-4">
+                                <span class="font-serif text-lg text-gold">3</span>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-medium mb-1">Fat Removal & Contouring</h4>
+                                <p class="text-sm text-white">A thin cannula is inserted through the incisions to gently suction out localized fat deposits. The surgeon sculpts the area for a smoother, more proportionate contour.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Approach To Safety Section - Text Left, Image Right -->
+    <section class="py-16 md:py-20 border-b border-gray-800 relative bg-fixed bg-cover bg-center bg-no-repeat" style="background-image: linear-gradient(to right, rgba(13, 17, 22, 0.6) 30%, rgba(13, 17, 22, 0.25)), url('https://res.cloudinary.com/dadofd9d2/image/upload/v1781150760/ChatGPT_Image_Jun_11_2026_09_35_15_AM_ilsrtz.png');">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
+                <div class="flex flex-col items-start text-left">
+                    <h2 class="font-serif text-3xl md:text-4xl text-gold mb-6">Our Approach To Safety</h2>
+                    <p class="text-gray-400 leading-relaxed mb-8">Proper consultation, suitability assessment, personalized planning, clear explanation, transparent discussion of risks, and follow-up care. Focus on natural-looking and proportionate results.</p>
+                    <div class="space-y-4 w-full">
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-gold mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="text-white font-medium mb-1">Thorough Consultation</h4>
+                                <p class="text-sm text-gray-400">Every patient undergoes a detailed medical evaluation to assess suitability and identify any risk factors before proceeding.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-gold mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="text-white font-medium mb-1">Personalized Planning</h4>
+                                <p class="text-sm text-gray-400">Treatment plans are customized to each patient's body type, fat distribution, skin quality, and aesthetic goals.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-gold mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="text-white font-medium mb-1">Transparent Communication</h4>
+                                <p class="text-sm text-gray-400">All potential risks, benefits, recovery expectations, and costs are discussed openly before any decision is made.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-gold mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="text-white font-medium mb-1">Sterile & Safe Facility</h4>
+                                <p class="text-sm text-gray-400">Procedures are performed in accredited facilities with strict sterilization protocols and trained medical staff.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-gold mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="text-white font-medium mb-1">Follow-Up Care</h4>
+                                <p class="text-sm text-gray-400">Regular follow-up appointments are scheduled to monitor healing and ensure optimal results.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-gold/10 rounded-lg transform translate-x-3 translate-y-3 transition group-hover:translate-x-4 group-hover:translate-y-4"></div>
+                    <img src="https://res.cloudinary.com/dadofd9d2/image/upload/v1781090846/ChatGPT_Image_Jun_10_2026_04_57_19_PM_lk0wej.png" alt="Doctor consultation" class="rounded-lg relative z-10 w-full h-64 md:h-96 object-cover opacity-80">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recovery After Liposuction Section - Image Left, Text Right -->
+    <section class="py-16 md:py-20 border-b border-gray-800 relative bg-fixed bg-cover bg-center bg-no-repeat" style="background-image: linear-gradient(to right, rgba(13, 17, 22, 0.85) 30%, rgba(13, 17, 22, 0.5)), url('https://res.cloudinary.com/dadofd9d2/image/upload/v1781091226/ChatGPT_Image_Jun_10_2026_05_03_40_PM_jmchio.png');">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-gold/10 rounded-lg transform translate-x-3 translate-y-3 transition group-hover:translate-x-4 group-hover:translate-y-4"></div>
+                    <img src="https://res.cloudinary.com/dadofd9d2/image/upload/v1781091057/ChatGPT_Image_Jun_10_2026_05_00_34_PM_oss8bv.png" alt="Recovery and wellness" class="rounded-lg relative z-10 w-full h-64 md:h-96 object-cover opacity-80">
+                </div>
+                <div class="flex flex-col items-center lg:items-start text-center lg:text-left">
+                    <h2 class="font-serif text-3xl md:text-4xl text-gold mb-4">Recovery After Liposuction</h2>
+                    <p class="text-gray-400 mb-8">Swelling, bruising or mild discomfort may occur. A compression garment may be advised. Most patients return to light activities in a few days.</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+                        <div class="bg-cardBg border border-gold/50 rounded-lg p-3 md:p-4 text-center">
+                            <i class="fas fa-clock text-xl md:text-2xl text-gold mb-2"></i>
+                            <h4 class="text-white text-sm font-medium mb-1">First 24-48 Hours</h4>
+                            <p class="text-xs text-gray-400">Rest recommended. Mild discomfort, swelling, and bruising are normal. Compression garment applied.</p>
+                        </div>
+                        <div class="bg-cardBg border border-gold/50 rounded-lg p-4 text-center">
+                            <i class="fas fa-walking text-xl md:text-2xl text-gold mb-2"></i>
+                            <h4 class="text-white text-sm font-medium mb-1">First Week</h4>
+                            <p class="text-xs text-gray-400">Light activities resume. Swelling subsides. Compression garment worn as advised.</p>
+                        </div>
+                        <div class="bg-cardBg border border-gold/50 rounded-lg p-4 text-center">
+                            <i class="fas fa-calendar-week text-xl md:text-2xl text-gold mb-2"></i>
+                            <h4 class="text-white text-sm font-medium mb-1">2-4 Weeks</h4>
+                            <p class="text-xs text-gray-400">Return to normal routine. Gradual contour improvement. Light exercise after clearance.</p>
+                        </div>
+                        <div class="bg-cardBg border border-gold/50 rounded-lg p-4 text-center">
+                            <i class="fas fa-star text-xl md:text-2xl text-gold mb-2"></i>
+                            <h4 class="text-white text-sm font-medium mb-1">1-6 Months</h4>
+                            <p class="text-xs text-gray-400">Final results apparent. Scarring fades. Enjoy improved body contour.</p>
+                        </div>
+                    </div>
+                    <div class="mt-6 bg-cardBg border border-gold/50 rounded-lg p-4 md:p-5 w-full">
+                        <h4 class="text-gold text-sm font-medium mb-3 text-center">Recovery Tips</h4>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-gray-400">
+                            <div class="flex items-start">
+                                <i class="fas fa-check text-gold mt-1 mr-2 text-[0.5rem]"></i>
+                                <span>Wear compression garment as directed</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check text-gold mt-1 mr-2 text-[0.5rem]"></i>
+                                <span>Stay hydrated and eat a balanced diet</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check text-gold mt-1 mr-2 text-[0.5rem]"></i>
+                                <span>Avoid strenuous activity for 2-4 weeks</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check text-gold mt-1 mr-2 text-[0.5rem]"></i>
+                                <span>Attend all scheduled follow-up appointments</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check text-gold mt-1 mr-2 text-[0.5rem]"></i>
+                                <span>Keep incisions clean and dry</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check text-gold mt-1 mr-2 text-[0.5rem]"></i>
+                                <span>Follow medication schedule as prescribed</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Liposuction Cost Section - Text Left, Image Right -->
+    <section id="cost" class="py-16 md:py-20 border-b border-gray-800 relative bg-fixed bg-cover bg-center bg-no-repeat" style="background-image: linear-gradient(to right, rgba(13, 17, 22, 0.6) 30%, rgba(13, 17, 22, 0.25)), url('https://res.cloudinary.com/dadofd9d2/image/upload/v1781150760/ChatGPT_Image_Jun_11_2026_09_35_15_AM_ilsrtz.png');">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
+                <div class="flex flex-col items-start text-left">
+                    <h2 class="font-serif text-3xl md:text-4xl text-gold mb-6">Liposuction Cost In Chandigarh / Mohali</h2>
+                    <p class="text-gray-400 leading-relaxed mb-6">The total cost of liposuction depends on several factors. A detailed cost estimate is provided after a thorough consultation with Dr. Akhil Garg.</p>
+                    <div class="border border-gold text-gold py-3 md:py-4 px-6 md:px-8 rounded font-serif text-xl md:text-2xl tracking-wide bg-gold/5 inline-block mb-6 md:mb-8 w-full sm:w-auto text-center">
+                        ₹80,000 to ₹3,00,000
+                    </div>
+                    <p class="text-sm text-gray-500 mb-6">Final cost is shared only after consultation.</p>
+                    <div class="space-y-3 w-full">
+                        <div class="flex items-start">
+                            <i class="fas fa-arrow-right text-gold mt-1 mr-4 text-xs"></i>
+                            <div>
+                                <h4 class="text-white text-sm font-medium mb-1">Number of Areas Treated</h4>
+                                <p class="text-xs text-gray-400">Treating multiple areas increases the overall cost compared to a single area.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-arrow-right text-gold mt-1 mr-4 text-xs"></i>
+                            <div>
+                                <h4 class="text-white text-sm font-medium mb-1">Amount of Fat to Be Removed</h4>
+                                <p class="text-xs text-gray-400">Larger volumes of fat may require more time and resources.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-arrow-right text-gold mt-1 mr-4 text-xs"></i>
+                            <div>
+                                <h4 class="text-white text-sm font-medium mb-1">Type of Anesthesia</h4>
+                                <p class="text-xs text-gray-400">General anesthesia costs more than local anesthesia.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-arrow-right text-gold mt-1 mr-4 text-xs"></i>
+                            <div>
+                                <h4 class="text-white text-sm font-medium mb-1">Surgical Facility Fees</h4>
+                                <p class="text-xs text-gray-400">Hospital or clinic charges for the operation theatre and stay.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-arrow-right text-gold mt-1 mr-4 text-xs"></i>
+                            <div>
+                                <h4 class="text-white text-sm font-medium mb-1">Technique Used</h4>
+                                <p class="text-xs text-gray-400">Advanced techniques like VASER or laser-assisted liposuction may cost more.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-arrow-right text-gold mt-1 mr-4 text-xs"></i>
+                            <div>
+                                <h4 class="text-white text-sm font-medium mb-1">Post-Operative Care</h4>
+                                <p class="text-xs text-gray-400">Compression garments, medications, and follow-up visits are additional considerations.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-gold/10 rounded-lg transform translate-x-3 translate-y-3 transition group-hover:translate-x-4 group-hover:translate-y-4"></div>
+                    <img src="https://res.cloudinary.com/dadofd9d2/image/upload/v1781091418/ChatGPT_Image_Jun_10_2026_05_06_51_PM_doncfa.png" alt="Medical cost consultation" class="rounded-lg relative z-10 w-full h-64 md:h-96 object-cover opacity-80">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Footer Area: FAQ & Form -->
+    <section id="consultation" class="py-12 md:py-16 border-t border-gray-800 relative bg-cover bg-center bg-no-repeat" style="background-image: linear-gradient(to right, rgba(13, 17, 22, 0.7) 30%, rgba(13, 17, 22, 0.4)), url('https://res.cloudinary.com/dadofd9d2/image/upload/v1781091626/ChatGPT_Image_Jun_10_2026_05_10_17_PM_iqoeyg.png');">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-24">
+                
+                <!-- FAQ Section -->
+                <div>
+                    <h3 class="font-serif text-xl text-gold mb-8 uppercase tracking-wide">FREQUENTLY ASKED QUESTIONS</h3>
+                    <div class="space-y-2 border border-gray-800 rounded-lg bg-cardBg p-4">
+                        
+                        <!-- FAQ Item 1 -->
+                        <div class="border-b border-gray-800 last:border-0">
+                            <button class="w-full flex justify-between items-center py-4 text-left focus:outline-none faq-toggle">
+                                <span class="text-sm font-medium text-gray-200">Is liposuction a weight-loss procedure?</span>
+                                <i class="fas fa-plus text-gold text-xs transition-transform duration-300"></i>
+                            </button>
+                            <div class="accordion-content">
+                                <p class="text-xs text-gray-400 leading-relaxed pb-4">No. Liposuction is not a weight-loss treatment. It is mainly used for body contouring and removing localized fat pockets from specific areas.</p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 2 -->
+                        <div class="border-b border-gray-800 last:border-0">
+                            <button class="w-full flex justify-between items-center py-4 text-left focus:outline-none faq-toggle">
+                                <span class="text-sm font-medium text-gray-200">Is liposuction safe?</span>
+                                <i class="fas fa-plus text-gold text-xs transition-transform duration-300"></i>
+                            </button>
+                            <div class="accordion-content">
+                                <p class="text-xs text-gray-400 leading-relaxed pb-4">Liposuction is generally considered safe when performed by a qualified plastic surgeon in suitable candidates. Risks will be discussed clearly during your consultation.</p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 3 -->
+                        <div class="border-b border-gray-800 last:border-0">
+                            <button class="w-full flex justify-between items-center py-4 text-left focus:outline-none faq-toggle">
+                                <span class="text-sm font-medium text-gray-200">Which body areas can liposuction treat?</span>
+                                <i class="fas fa-plus text-gold text-xs transition-transform duration-300"></i>
+                            </button>
+                            <div class="accordion-content">
+                                <p class="text-xs text-gray-400 leading-relaxed pb-4">Common areas include the abdomen, waist, thighs, arms, back, hips, and under the chin. Suitability depends on evaluation.</p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 4 -->
+                        <div class="border-b border-gray-800 last:border-0">
+                            <button class="w-full flex justify-between items-center py-4 text-left focus:outline-none faq-toggle">
+                                <span class="text-sm font-medium text-gray-200">Who is the right candidate for liposuction?</span>
+                                <i class="fas fa-plus text-gold text-xs transition-transform duration-300"></i>
+                            </button>
+                            <div class="accordion-content">
+                                <p class="text-xs text-gray-400 leading-relaxed pb-4">A good candidate has stable weight, localized fat pockets, good health, and realistic expectations. Not for major weight loss.</p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 5 -->
+                        <div class="border-b border-gray-800 last:border-0">
+                            <button class="w-full flex justify-between items-center py-4 text-left focus:outline-none faq-toggle">
+                                <span class="text-sm font-medium text-gray-200">Will the fat come back after liposuction?</span>
+                                <i class="fas fa-plus text-gold text-xs transition-transform duration-300"></i>
+                            </button>
+                            <div class="accordion-content">
+                                <p class="text-xs text-gray-400 leading-relaxed pb-4">Removed fat cells don't usually return, but weight gain can affect overall shape. A stable lifestyle is important.</p>
+                            </div>
+                        </div>
+
+                         <!-- FAQ Item 6 -->
+                         <div class="border-b border-gray-800 last:border-0">
+                            <button class="w-full flex justify-between items-center py-4 text-left focus:outline-none faq-toggle">
+                                <span class="text-sm font-medium text-gray-200">How soon will I see results?</span>
+                                <i class="fas fa-plus text-gold text-xs transition-transform duration-300"></i>
+                            </button>
+                            <div class="accordion-content">
+                                <p class="text-xs text-gray-400 leading-relaxed pb-4">Improvement is visible early, but final contour improvement usually becomes clearer gradually over weeks to months as swelling settles.</p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 7 -->
+                        <div class="border-b border-gray-800 last:border-0">
+                            <button class="w-full flex justify-between items-center py-4 text-left focus:outline-none faq-toggle">
+                                <span class="text-sm font-medium text-gray-200">How much does liposuction cost?</span>
+                                <i class="fas fa-plus text-gold text-xs transition-transform duration-300"></i>
+                            </button>
+                            <div class="accordion-content">
+                                <p class="text-xs text-gray-400 leading-relaxed pb-4">It may range from ₹80,000 to ₹3,00,000 depending on factors discussed during consultation.</p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 8 -->
+                        <div class="border-b border-gray-800 last:border-0">
+                            <button class="w-full flex justify-between items-center py-4 text-left focus:outline-none faq-toggle">
+                                <span class="text-sm font-medium text-gray-200">How do I know if liposuction is right for me?</span>
+                                <i class="fas fa-plus text-gold text-xs transition-transform duration-300"></i>
+                            </button>
+                            <div class="accordion-content">
+                                <p class="text-xs text-gray-400 leading-relaxed pb-4">The best way is to schedule a consultation with Dr. Akhil Garg for a proper evaluation.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Form Section -->
+                <div>
+                    <h3 class="font-serif text-xl text-gold mb-8 uppercase tracking-wide">BOOK A CONFIDENTIAL CONSULTATION</h3>
+                    <div class="bg-cardBg border border-gray-800 rounded-lg p-5 md:p-6 lg:p-8">
+                        <form id="consultForm" class="space-y-4">
+                            <div>
+                                <input type="text" placeholder="Full Name" required class="w-full bg-dark border border-gray-700 rounded p-3 text-sm text-white focus:border-gold focus:outline-none transition placeholder-gray-500">
+                            </div>
+                            <div>
+                                <input type="email" placeholder="Email Address" required class="w-full bg-dark border border-gray-700 rounded p-3 text-sm text-white focus:border-gold focus:outline-none transition placeholder-gray-500">
+                            </div>
+                            <div>
+                                <input type="tel" placeholder="Phone Number" required class="w-full bg-dark border border-gray-700 rounded p-3 text-sm text-white focus:border-gold focus:outline-none transition placeholder-gray-500">
+                            </div>
+                            <div>
+                                <input type="text" placeholder="Your Location (City)" required class="w-full bg-dark border border-gray-700 rounded p-3 text-sm text-white focus:border-gold focus:outline-none transition placeholder-gray-500">
+                            </div>
+                            <div>
+                                <textarea rows="3" placeholder="Your Message" class="w-full bg-dark border border-gray-700 rounded p-3 text-sm text-white focus:border-gold focus:outline-none transition placeholder-gray-500 resize-none"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full bg-gold hover:bg-goldHover text-dark font-bold py-3 px-4 rounded transition mt-4 uppercase tracking-wider text-sm shadow-lg shadow-gold/20">
+                                BOOK MY CONSULTATION
+                            </button>
+
+                            <div class="flex items-start mt-4 opacity-70">
+                                <i class="fas fa-lock text-gold text-[0.6rem] mt-1 mr-2"></i>
+                                <p class="text-[0.65rem] text-gray-400 leading-tight">By submitting this form, you agree to be contacted by Dr. Akhil Garg's team via call, WhatsApp, SMS, or email regarding your enquiry.</p>
+                            </div>
+                            
+                            <!-- Success Message hidden by default -->
+                            <div id="formSuccess" class="hidden mt-4 p-3 bg-green-900/30 border border-green-800 text-green-400 text-xs rounded text-center">
+                                Thank you. Your request has been received. We will contact you shortly.
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom Footer -->
+    <footer class="border-t border-gray-800 py-6 md:py-8 bg-cover bg-center bg-no-repeat" style="background-image: linear-gradient(to right, rgba(13, 17, 22, 0.6) 30%, rgba(13, 17, 22, 0.25)), url('https://res.cloudinary.com/dadofd9d2/image/upload/v1781150760/ChatGPT_Image_Jun_11_2026_09_35_15_AM_ilsrtz.png');">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-start gap-6 md:gap-6">
+                
+                <!-- Logo -->
+                <div class="flex flex-col items-start">
+                    <img src="https://res.cloudinary.com/dadofd9d2/image/upload/v1781082613/Dr.-Akhil-Garg-_ngltq2.png" alt="Dr. Akhil Garg" class="w-28 sm:w-36 lg:w-auto" style="height:5rem;">
+                </div>
+
+                <!-- Locations -->
+                <div class="flex flex-col sm:flex-row gap-6 text-sm">
+                    <div class="flex items-start">
+                        <i class="fas fa-map-marker-alt text-gold mt-1 mr-2"></i>
+                        <div>
+                            <p class="text-white font-medium">Morphe Aesthetics, Chandigarh</p>
+                            <p class="text-gray-500 text-xs">SCO 88-89, Sector 34-A, Chandigarh, 160022</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-map-marker-alt text-gold mt-1 mr-2"></i>
+                        <div>
+                            <p class="text-white font-medium">Fortis Hospital, Mohali</p>
+                            <p class="text-gray-500 text-xs">Sector 62, Phase 8, Mohali, Punjab 160062</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Serving Area -->
+                 <div class="flex items-start text-xs text-gray-400 text-left">
+                    <i class="fas fa-globe text-gray-500 mr-2 text-lg"></i>
+                    <p>Serving Chandigarh, Mohali,<br>Panchkula, Punjab, Haryana,<br>Himachal Pradesh and North India</p>
+                </div>
+
+                <!-- Socials -->
+                <div class="flex space-x-3">
+                    <a href="#" class="w-8 h-8 rounded-full border border-gray-700 flex items-center justify-center text-gray-400 hover:text-gold hover:border-gold transition"><i class="fab fa-facebook-f text-sm"></i></a>
+                    <a href="#" class="w-8 h-8 rounded-full border border-gray-700 flex items-center justify-center text-gray-400 hover:text-gold hover:border-gold transition"><i class="fab fa-instagram text-sm"></i></a>
+                    <a href="#" class="w-8 h-8 rounded-full border border-gray-700 flex items-center justify-center text-gray-400 hover:text-gold hover:border-gold transition"><i class="fab fa-youtube text-sm"></i></a>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile Menu Toggle
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenuClose = document.getElementById('mobileMenuClose');
+            const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+            const mobileLinks = mobileMenu?.querySelectorAll('a');
+
+            function openMobileMenu() {
+                mobileMenu.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeMobileMenu() {
+                mobileMenu.classList.add('hidden');
+                document.body.style.overflow = '';
+            }
+
+            if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', openMobileMenu);
+            if (mobileMenuClose) mobileMenuClose.addEventListener('click', closeMobileMenu);
+            if (mobileMenuOverlay) mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+            mobileLinks?.forEach(link => link.addEventListener('click', closeMobileMenu));
+
+            // FAQ Accordion Logic
+            const faqToggles = document.querySelectorAll('.faq-toggle');
+            
+            faqToggles.forEach(toggle => {
+                toggle.addEventListener('click', () => {
+                    const content = toggle.nextElementSibling;
+                    const icon = toggle.querySelector('i');
+                    const isOpen = content.classList.contains('active');
+
+                    // Close all others
+                    document.querySelectorAll('.accordion-content').forEach(c => c.classList.remove('active'));
+                    document.querySelectorAll('.faq-toggle i').forEach(i => {
+                        i.classList.remove('fa-minus');
+                        i.classList.add('fa-plus');
+                    });
+
+                    // Toggle current
+                    if (!isOpen) {
+                        content.classList.add('active');
+                        icon.classList.remove('fa-plus');
+                        icon.classList.add('fa-minus');
+                    }
+                });
+            });
+
+            // Form Submission Simulation
+            const form = document.getElementById('consultForm');
+            const successMsg = document.getElementById('formSuccess');
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                // Simulate sending
+                const btn = form.querySelector('button[type="submit"]');
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> SENDING...';
+                btn.disabled = true;
+
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.disabled = false;
+                    form.reset();
+                    successMsg.classList.remove('hidden');
+                    setTimeout(() => {
+                        successMsg.classList.add('hidden');
+                    }, 5000);
+                }, 1500);
+            });
+        });
+    </script>
+
+    <!-- Fixed WhatsApp Icon -->
+    <a href="#" class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-gold hover:bg-goldHover rounded-full flex items-center justify-center shadow-lg shadow-gold/30 transition-transform hover:scale-110">
+        <i class="fab fa-whatsapp text-dark text-3xl"></i>
+    </a>
+</body>
+</html>
