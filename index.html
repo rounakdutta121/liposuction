@@ -49,6 +49,17 @@
         /* Utility for text balance */
         .text-balance { text-wrap: balance; }
         
+        /* Testimonial line clamp */
+        .testimonial-text {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .testimonial-text.expanded {
+            -webkit-line-clamp: unset;
+        }
+        
         /* Accordion transition */
         .accordion-content {
             transition: max-height 0.3s ease-out, opacity 0.3s ease-out, padding 0.3s ease;
@@ -306,7 +317,6 @@
                         <a href="#consultation" class="inline-flex items-center border border-gold hover:bg-gold/10 text-gold font-medium py-3 px-6 rounded transition">
                             <i class="far fa-calendar-alt mr-2"></i> BOOK A CONSULTATION
                         </a>
-                        <p class="text-xs text-white mt-3">to understand if liposuction is right for you.</p>
                     </div>
                 </div>
 
@@ -657,7 +667,7 @@
 
 
     <!-- Footer Area: FAQ & Form -->
-    <section id="consultation" class="py-12 md:py-16 border-t border-gray-800 relative bg-cover bg-center bg-no-repeat" style="background-image: linear-gradient(to right, rgba(13, 17, 22, 0.7) 30%, rgba(13, 17, 22, 0.4)), url('https://res.cloudinary.com/dadofd9d2/image/upload/v1781091626/ChatGPT_Image_Jun_10_2026_05_10_17_PM_iqoeyg.png');">
+    <section id="consultation" class="py-12 md:py-16 border-t border-gray-800 relative bg-cover bg-center bg-fixed" style="background-image: linear-gradient(to right, rgba(13, 17, 22, 0.7) 30%, rgba(13, 17, 22, 0.4)), url('https://res.cloudinary.com/dadofd9d2/image/upload/v1781091626/ChatGPT_Image_Jun_10_2026_05_10_17_PM_iqoeyg.png');">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-24">
                 
@@ -799,6 +809,83 @@
         </div>
     </section>
 
+    <!-- Testimonials Section -->
+    <section class="py-16 md:py-20 bg-cover bg-center bg-fixed border-t border-gray-800" style="background-image: linear-gradient(to right, rgba(13, 17, 22, 0.85) 15%, rgba(13, 17, 22, 0.6)), url('https://res.cloudinary.com/dadofd9d2/image/upload/v1781150760/ChatGPT_Image_Jun_11_2026_09_35_15_AM_ilsrtz.png');">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <p class="text-gold tracking-wider text-sm font-medium uppercase mb-3">PATIENT TESTIMONIALS</p>
+                <h2 class="font-serif text-3xl md:text-4xl text-white">What Our Patients Say</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                <!-- Testimonial 1 -->
+                <div class="bg-cardBg border border-gold/30 rounded-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gold/20 flex items-center justify-center text-gold font-bold text-lg">PM</div>
+                        <div class="ml-3">
+                            <h4 class="text-white font-medium">Preety Mittal</h4>
+                            <div class="flex text-gold text-xs">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <span class="ml-auto text-xs text-gray-500">1 month ago</span>
+                    </div>
+                    <div class="testimonial-text text-sm text-gray-400 leading-relaxed">I wish I could give more than 5 stars because Dr. Akhil Garg and Dr. Vinita truly deserve it! I recently went to them for a breast fat lifting procedure, and the entire experience was flawless. They are so cooperative and professional. Their clinic is super clean and hygienic, and the staff is wonderful. Their team was very polite, and the hospitality they gave was the best. What I loved most was how reachable they were; they picked up all my calls and made sure to solve my every query not only before but also after the treatment.</div>
+                    <button class="testimonial-btn mt-2 text-gold text-xs hover:text-goldHover transition font-medium">Read more</button>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-cardBg border border-gold/30 rounded-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gold/20 flex items-center justify-center text-gold font-bold text-lg">AS</div>
+                        <div class="ml-3">
+                            <h4 class="text-white font-medium">Amit Sharma</h4>
+                            <div class="flex text-gold text-xs">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <span class="ml-auto text-xs text-gray-500">2 months ago</span>
+                    </div>
+                    <div class="testimonial-text text-sm text-gray-400 leading-relaxed">Dr Akhil Garg is an exceptional surgeon. He performed surgery on my wife and the results were outstanding. From the first consultation, his calm demeanour and clear explanations gave us complete confidence. His surgical expertise is evident in my wife's excellent recovery. The postoperative care from him and his team was attentive and compassionate. We are incredibly grateful. Highly recommended. A special mention for Dr Saloni for her unwavering support.</div>
+                    <button class="testimonial-btn mt-2 text-gold text-xs hover:text-goldHover transition font-medium">Read more</button>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-cardBg border border-gold/30 rounded-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gold/20 flex items-center justify-center text-gold font-bold text-lg">FO</div>
+                        <div class="ml-3">
+                            <h4 class="text-white font-medium">FiLoSiPi Of Exams</h4>
+                            <div class="flex text-gold text-xs">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <span class="ml-auto text-xs text-gray-500">2 months ago</span>
+                    </div>
+                    <div class="testimonial-text text-sm text-gray-400 leading-relaxed">A skilled surgeon with a pure heart and exceptional precision. Mind-blowing expertise, friendly nature, and true professionalism. A good soul who performs every surgery with excellence and care. Remarkably talented, humble, and genuinely supportive doctor. Perfect blend of skill, compassion, and dedication. I am truly grateful to have found such a wonderful surgeon who genuinely cares about his patients.</div>
+                    <button class="testimonial-btn mt-2 text-gold text-xs hover:text-goldHover transition font-medium">Read more</button>
+                </div>
+
+                <!-- Testimonial 4 -->
+                <div class="bg-cardBg border border-gold/30 rounded-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gold/20 flex items-center justify-center text-gold font-bold text-lg">ST</div>
+                        <div class="ml-3">
+                            <h4 class="text-white font-medium">Shagun Taneja</h4>
+                            <div class="flex text-gold text-xs">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <span class="ml-auto text-xs text-gray-500">1 month ago</span>
+                    </div>
+                    <div class="testimonial-text text-sm text-gray-400 leading-relaxed">He is a very good doctor. His suggestions are very accurate and his examination is on point. I highly recommend Dr. Akhil Garg for anyone seeking expert plastic surgery care. He takes the time to understand your concerns and explains everything clearly. The results of my procedure exceeded my expectations, and the entire journey from consultation to recovery was smooth and stress-free. A truly gifted surgeon with a wonderful bedside manner.</div>
+                    <button class="testimonial-btn mt-2 text-gold text-xs hover:text-goldHover transition font-medium">Read more</button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <!-- Bottom Footer -->
     <footer class="border-t border-gray-800 py-6 md:py-8 bg-cover bg-center bg-no-repeat" style="background-image: linear-gradient(to right, rgba(13, 17, 22, 0.6) 30%, rgba(13, 17, 22, 0.25)), url('https://res.cloudinary.com/dadofd9d2/image/upload/v1781150760/ChatGPT_Image_Jun_11_2026_09_35_15_AM_ilsrtz.png');">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -915,6 +1002,15 @@
                         successMsg.classList.add('hidden');
                     }, 5000);
                 }, 1500);
+            });
+
+            // Testimonial Read More
+            document.querySelectorAll('.testimonial-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const text = btn.previousElementSibling;
+                    text.classList.toggle('testimonial-text');
+                    btn.textContent = text.classList.contains('testimonial-text') ? 'Read more' : 'Show less';
+                });
             });
         });
     </script>
