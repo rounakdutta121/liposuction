@@ -949,7 +949,7 @@
 
       // Lead form handler.
       // Add your real Google Sheet / CRM webhook URL below to store leads.
-      const LEAD_WEBHOOK_URL = '';
+      const LEAD_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbxE_ANJcfuyfIvJJ_wkZgyHtisPMUc-6jTnPjKZZPnBce_6UUcKkaGpdVIAluhS7oOsiA/exec';
       document.querySelectorAll('.lead-form').forEach(form => {
         form.addEventListener('submit', async (event) => {
           event.preventDefault();
@@ -970,11 +970,7 @@
 
           try {
             if (LEAD_WEBHOOK_URL) {
-              await fetch(LEAD_WEBHOOK_URL, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(payload)
-              });
+              navigator.sendBeacon(LEAD_WEBHOOK_URL, JSON.stringify(payload));
             }
             form.reset();
             success?.classList.remove('hidden');
